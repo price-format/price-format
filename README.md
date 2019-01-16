@@ -1,1 +1,1 @@
-# price-format
+# Price Format
