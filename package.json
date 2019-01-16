@@ -60,7 +60,7 @@
     "functions": 100,
     "lines": 100,
     "check-coverage": true,
-    "exclude": "tests/**",
+    "exclude": "test/**",
     "extension": [
       ".js"
     ],
