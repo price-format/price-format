@@ -1,11 +1,13 @@
 {
   "name": "price-format",
-  "version": "3.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Quick and easy to format any numeric value into price values",
   "main": "src/index.js",
   "files": [
     "lib/price-format.js",
-    "lib/price-format.min.js"
+    "lib/price-format.js.map",
+    "lib/price-format.min.js",
+    "lib/price-format.min.js.map"
   ],
   "scripts": {
     "build": "webpack --env dev && webpack --env build",

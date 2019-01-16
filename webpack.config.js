@@ -5,13 +5,14 @@ const webpack = require('webpack')
 const { join, resolve } = require('path')
 const env = require('yargs').argv.env
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const { name, description, version, authors, license } = require('./package.json')
 
 let libraryName = 'price-format'
 let plugins = []
 let outputFile
 
 plugins.push(new webpack.DefinePlugin({
-  VERSION: JSON.stringify(require('./package.json').version)
+  VERSION: JSON.stringify(version)
 }))
 
 if (env === 'build') {
@@ -28,6 +29,14 @@ if (env === 'build') {
     }
   }))
 }
+
+plugins.push(new webpack.BannerPlugin({
+  banner: `@package: ${name}
+@description: ${description}
+@version: ${version}
+@authors: ${authors}
+@license: Licensed under the ${license} licenses: https://raw.githubusercontent.com/price-format/price-format/dev/LICENSE`
+}))
 
 const config = {
   entry: join(__dirname, '/src/index.js'),
