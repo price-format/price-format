@@ -1,4 +1,3 @@
 # Price Format
 
-[![Build Status](https://travis-ci.org/price-format/price-format.svg?branch=dev)](https://travis-ci.org/price-format/price-format)
-
+![Build Status](https://img.shields.io/travis/price-format/price-format.svg) ![MIT license](https://img.shields.io/github/license/price-format/price-format.svg) ![Last commit](https://img.shields.io/github/last-commit/price-format/price-format.svg) ![open issues](https://img.shields.io/github/issues-raw/price-format/price-format.svg) ![closed issues](https://img.shields.io/github/issues-closed-raw/price-format/price-format.svg) ![closed pr](https://img.shields.io/github/issues-pr-closed-raw/price-format/price-format.svg) ![top language](https://img.shields.io/github/languages/top/price-format/price-format.svg) ![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/price-format/price-format.svg) ![code size](https://img.shields.io/github/languages/code-size/price-format/price-format.svg) ![repo size](https://img.shields.io/github/repo-size/price-format/price-format.svg)
