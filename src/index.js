@@ -1,5 +1,23 @@
-import { AlertBox } from './alert-box'
+import * as API from './api'
+import * as Utils from './utils'
 
-const { saySomething } = new AlertBox()
+// alert(saySomething('Hello World')) // eslint-disable-line
 
-alert(saySomething()) // eslint-disable-line
+export default class PriceFormat {
+  /**
+   * @param {object} options
+   * @return {PriceFormat}
+   */
+
+  constructor (options = {}) {
+    this.options = Utils.deepExtend({}, API.Defaults, options)
+
+    console.log(this)
+
+    return this
+  }
+}
+
+new PriceFormat({ // eslint-disable-line
+  allowNegative: true
+})
