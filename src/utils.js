@@ -18,9 +18,9 @@ class Utils {
 
       for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
-          if (Array.isArray(obj[key])) {
+          if (this.is('array', obj[key])) {
             out[key] = obj[key]
-          } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+          } else if (this.is('object', obj[key]) && obj[key] !== null) {
             out[key] = this.deepExtend(out[key], obj[key])
           } else {
             out[key] = obj[key]
