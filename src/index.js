@@ -1,6 +1,11 @@
 import * as API from './api'
 import * as Utils from './utils'
 
+/**
+ * Class PriceFormat
+ *
+ * @class
+ */
 export default class PriceFormat {
   /**
    * @param {object} options

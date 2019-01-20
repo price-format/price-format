@@ -1,6 +1,5 @@
 /**
- * A collection of static utility functions.
- * @const
+ * A collection class of static utility functions.
  */
 class Utils {
   /**
@@ -35,6 +34,13 @@ class Utils {
   /**
    * typeOf
    *
+   * @example
+   * // returns string
+   * Utils.typeOf('hello');
+   * @example
+   * // returns number
+   * Utils.typeOf(123);
+   *
    * @static
    * @return string
    */
@@ -44,6 +50,13 @@ class Utils {
 
   /**
    * isString
+   *
+   * @example
+   * // returns true
+   * Utils.isString('hello');
+   * @example
+   * // returns false
+   * Utils.isString(123);
    *
    * @static
    * @return boolean
@@ -56,7 +69,7 @@ class Utils {
    * hasValue
    *
    * @static
-   * @return
+   * @param {string} params - A string.
    */
   static hasValue (params) {
     return params.length === 2
@@ -66,7 +79,6 @@ class Utils {
    * rawType
    *
    * @static
-   * @return
    */
   static rawType (value) {
     return Object.prototype.toString.call(value)
@@ -75,8 +87,15 @@ class Utils {
   /**
    * is
    *
+   * @example
+   * // returns true
+   * Utils.is('object', {});
+   * @example
+   * // returns false
+   * Utils.is('object', []);
+   *
    * @static
-   * @return boolean
+   * @return {Boolean}
    */
   static is (...params) {
     const [typeToTest, value] = params
