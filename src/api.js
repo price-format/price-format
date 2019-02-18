@@ -1,4 +1,5 @@
 export let Defaults = {
+  amount: 0,
   prefix: 'US$ ',
   suffix: '',
   centsSeparator: '.',

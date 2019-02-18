@@ -17,7 +17,7 @@
     "lint": "eslint ./src/*.js --quiet",
     "spec": "NODE_ENV=test mocha ./test/*.spec.js --require babel-core/register",
     "test": "npm run lint && npm run spec",
-    "test:watch": "npm run spec -w",
+    "test:watch": "npm run spec -- -w",
     "test:coverage": "NODE_ENV=test nyc mocha ./test/*.spec.js --require babel-core/register",
     "pre-commit": "npm test"
   },
@@ -75,8 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "npm test"
     }
   }
 }

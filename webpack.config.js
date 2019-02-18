@@ -7,18 +7,18 @@ const env = require('yargs').argv.env
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { name, description, version, authors, license } = require('./package.json')
 
-let libraryName = 'price-format'
+let libraryName = 'PriceFormat'
+let outputFile = 'price-format'
 let plugins = []
-let outputFile
 
 plugins.push(new webpack.DefinePlugin({
   VERSION: JSON.stringify(version)
 }))
 
 if (env === 'build') {
-  outputFile = libraryName.toLowerCase() + '.min.js'
+  outputFile = `${outputFile}.min.js`
 } else {
-  outputFile = libraryName.toLowerCase() + '.js'
+  outputFile = `${outputFile}.js`
   plugins.push(new BrowserSyncPlugin({
     ui: false,
     host: 'localhost',

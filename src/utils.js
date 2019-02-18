@@ -3,35 +3,6 @@
  */
 class Utils {
   /**
-   * deepExtend
-   *
-   * @static
-   */
-  static deepExtend (out) {
-    out = out || {}
-
-    for (let i = 1; i < arguments.length; i++) {
-      let obj = arguments[i]
-
-      if (!obj) continue
-
-      for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-          if (this.is('array', obj[key])) {
-            out[key] = obj[key]
-          } else if (this.is('object', obj[key]) && obj[key] !== null) {
-            out[key] = this.deepExtend(out[key], obj[key])
-          } else {
-            out[key] = obj[key]
-          }
-        }
-      }
-    }
-
-    return out
-  }
-
-  /**
    * typeOf
    *
    * @example

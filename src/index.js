@@ -1,5 +1,4 @@
 import * as API from './api'
-import * as Utils from './utils'
 
 /**
  * Class PriceFormat
@@ -7,14 +6,23 @@ import * as Utils from './utils'
  * @class
  */
 export default class PriceFormat {
-  /**
-   * @param {object} options
-   * @return {PriceFormat}
-   */
-
   constructor (options = {}) {
-    this.options = Utils.deepExtend({}, API.Defaults, options)
+    this.formatedAmount = null
+    this.setOptions(options)
+  }
 
-    return this
+  currencyFormatter () {
+    this.formatedAmount = `${this.options.prefix}${this.options.amount}.00${this.options.suffix}`
+  }
+
+  setOptions (options = {}) {
+    this.options = Object.assign({}, API.Defaults, options)
+  }
+
+  format (amount) {
+    this.options.amount = amount || this.options.amount
+    this.currencyFormatter()
+
+    return this.formatedAmount
   }
 }
