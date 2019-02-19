@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  main:
+    image: node:11-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    command: 
+      - /bin/sh
+      - -c
+      - |
+          [ "$$(which yarn)" ] && echo "" || npm i --global yarn
+          yarn
+          yarn run dev
