@@ -12,7 +12,7 @@ export default class PriceFormat {
   }
 
   currencyFormatter () {
-    this.formatedAmount = `${this.options.prefix}${this.options.amount}.00${this.options.suffix}`
+    this.formatedAmount = `${this.options.prefix}${this.options.amount}${this.options.centsSeparator}00${this.options.suffix}`
   }
 
   setOptions (options = {}) {

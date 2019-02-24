@@ -12,6 +12,9 @@ addContent(Price.format(0))
 Price.setOptions({ prefix: 'US$ ' })
 addContent(Price.format(4))
 
+Price.setOptions({ centsSeparator: ',' })
+addContent(Price.format(4))
+
 Price.setOptions({
   amount: 6,
   prefix: '',

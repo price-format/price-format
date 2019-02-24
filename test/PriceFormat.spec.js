@@ -37,7 +37,22 @@ describe('PriceFormat', () => {
       let Price = new PriceFormat({ prefix: '', suffix: ' €' })
       expect(Price.format(3)).to.deep.equal('3.00 €')
     })
-  })
+
+    it('Price.format(3) value is deep equal 3,00', () => {
+      let Price = new PriceFormat({ prefix: '', sufix: '', centsSeparator: ','})
+      expect(Price.format(3)).to.deep.equal('3,00')
+    })
+ 
+    it('Price.format(3) value is deep equal 3-00', () => {
+      let Price = new PriceFormat({ prefix: '', sufix: '', centsSeparator: '-'})
+      expect(Price.format(3)).to.deep.equal('3-00')
+    })
+ 
+    it('Price.format(3) value is deep equal 3**00', () => {
+      let Price = new PriceFormat({ prefix: '', sufix: '', centsSeparator: '**'})
+      expect(Price.format(3)).to.deep.equal('3**00')
+    })
+})
 
   describe('Price.setOptions()', () => {
     it('when use Price.setOptions({ amount: 3 }) the Price.format() value is deep equal US$ 3.00', () => {
